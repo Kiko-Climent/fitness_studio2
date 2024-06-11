@@ -1,19 +1,19 @@
 import { connect } from "react-redux";
+import logo from 'assets/img/logo-300x100.jpg'
 
 const navigation = {
     services: [
-      { name: 'Courses', href: '#' },
-      { name: 'Training Plan', href: '#' },
-      { name: 'Gym Equipment', href: '#' },
+      { name: 'Training Plan', href: '/training' },
+      { name: 'Gym Equipment', href: '/equipment' },
       { name: 'Sauna', href: '#' },
     ],
     help_and_contact: [
       { name: 'Cancel Contract', href: '#' },
       { name: 'Trial Day', href: '#' },
-      { name: 'Get in Touch', href: '#' },
+      { name: 'Get in Touch', href: '/contact' },
     ],
     company: [
-      { name: 'About', href: '#' },
+      { name: 'About', href: '/about' },
       { name: 'Jobs', href: '#' },
       { name: 'Press', href: '#' },
       { name: 'Partners', href: '#' },
@@ -90,18 +90,18 @@ const navigation = {
 
 function Footer(){
     return(
-        <footer className="bg-white" aria-labelledby="footer-heading">
+        <footer className="bg-gray-50" aria-labelledby="footer-heading">
         <h2 id="footer-heading" className="sr-only">
           Footer
         </h2>
         <div className="mx-auto max-w-full py-12 px-4 sm:px-6 lg:py-16 lg:px-8">
           <div className="xl:grid xl:grid-cols-3 xl:gap-8">
             <div className="space-y-8 xl:col-span-1">
-              <img
-                className="h-10"
-                src="https://tailwindui.com/img/logos/mark.svg?color=gray&shade=300"
-                alt="Company name"
-              />
+            <img
+            src={logo}
+            width={180}
+            height={90}
+            className=""/>
               <p className="text-base text-gray-500">
                 "Empower Your Body, Elevate Your Mind"
               </p>
