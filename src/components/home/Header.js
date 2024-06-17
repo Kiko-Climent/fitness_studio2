@@ -13,7 +13,7 @@ function Header(){
                 <h1 className="text-white font-bold tracking-tight sm:text-center sm:text-6xl text-7xl">
                    
                   <Typewriter
-                        words={['Fitness', 'Pilates', 'Crossfit', 'Yoga', '...and much more']}
+                        words={['Fitness', 'Pilates', 'Crossfit', 'Yoga', '..and more']}
                         loop={0}
                         cursor
                         cursorStyle='_'

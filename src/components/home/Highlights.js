@@ -8,7 +8,7 @@ const posts = [
       date: 'Mar 16, 2020',
       datetime: '2020-03-16',
       imageUrl:
-      'https://res.cloudinary.com/dzlveh6fi/image/upload/v1717614791/sven-mieke-optBC2FxCfc-unsplash_1_bazxb3.jpg',
+      'https://res.cloudinary.com/dzlveh6fi/image/upload/v1718102596/crossfit_lg_es84zr.jpg',
     },
     {
       title: 'How to use search engine optimization to drive sales',
