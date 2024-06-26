@@ -4,6 +4,8 @@ import { useState, Fragment } from "react";
 import { Popover, Transition } from '@headlessui/react';
 import logo from 'assets/img/logo-300x100.jpg';
 import "boxicons/css/boxicons.min.css";
+import alert from "components/alert";
+import Alert from "components/alert";
 
 const solutions = [
     {
@@ -72,7 +74,7 @@ function Navbar() {
                         <NavLink to='/equipment' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-transparent hover:border-blue-hercules transition duration-300 ease-in-out mx-4">Equipment</NavLink>
                         <NavLink to='/about' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-transparent hover:border-blue-hercules transition duration-300 ease-in-out mx-4">About</NavLink>
                         <NavLink to='/contact' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-transparent hover:border-blue-hercules transition duration-300 ease-in-out mx-4">Contact</NavLink>
-                        <NavLink to='/members' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-transparent hover:border-blue-hercules transition duration-300 ease-in-out mx-4">Member Area</NavLink>
+                        <NavLink to='/signup' className="text-lg inline-flex font-medium leading-6 text-gray-900 border-b-2 border-transparent hover:border-blue-hercules transition duration-300 ease-in-out mx-4">Member Area</NavLink>
                         <button type="button" className="ml-12 mt-2 relative inline-flex items-center rounded-md border border-transparent bg-blue-hercules px-6 py-2 text-l font-bold text-white shadow-sm hover:transition hover:duration-300 hover:ease-in-out hover:bg-black focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2">Become a Member</button>
                     </div>
                 </div>
@@ -121,6 +123,7 @@ function Navbar() {
                                 </>
                             )}
                         </Popover>
+                        <Alert/>
                     </div>
                 </div>
             </div>

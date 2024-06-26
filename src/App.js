@@ -5,6 +5,10 @@ import { Provider } from "react-redux";
 
 import AnimatedRoutes from "AnimatedRoutes";
 
+import Signup from './containers/auth/Signup'
+import Login from './containers/auth/Login'
+import Activate from './containers/auth/Activate'
+
 
 function App() {
   
@@ -35,7 +39,6 @@ function App() {
       </Helmet>
 
       <Provider store={store}>
-
         <Router>
           <AnimatedRoutes/>
         </Router>

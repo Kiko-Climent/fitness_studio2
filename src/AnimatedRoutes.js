@@ -6,6 +6,10 @@ import About from "containers/pages/About";
 import Contact from "containers/pages/Contact";
 import Members from "containers/pages/Members";
 import Equipment from "containers/pages/Equipment";
+import Signup from './containers/auth/Signup'
+import Login from './containers/auth/Login'
+import Activate from './containers/auth/Activate'
+
 
 import { AnimatePresence } from 'framer-motion'
 
@@ -26,6 +30,10 @@ function AnimatedRoutes(){
                 <Route path="/about" element={<About />} />
                 <Route path="/contact" element={<Contact />} />
                 <Route path="/members" element={<Members />} />
+                {/*Authentication*/}
+                <Route exact path="/signup" element={<Signup/>}/>
+                <Route exact path="/login" element={<Login/>}/>
+                <Route exact path="/activate/:uid/:token" element={<Activate/>}/>
             </Routes>
         </AnimatePresence>
     )
