@@ -1,7 +1,7 @@
 import { Fragment } from "react/jsx-runtime";
 import { connect } from "react-redux";
 
-import { CheckCircleIcon, XIcon } from '@heroicons/react/solid'
+import { CheckCircleIcon } from '@heroicons/react/20/solid'
 
 function Alert ({ alert }) {
     const displayAlert = () => {

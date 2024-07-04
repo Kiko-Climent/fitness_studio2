@@ -1,5 +1,6 @@
 from pathlib import Path
 import os
+import dj_database_url
 import environ
 from datetime import timedelta
 
@@ -100,12 +101,31 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+# antigua database
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
+#print(f"DATABASE_URL: {env('DATABASE_URL')}")
+#
+#DATABASES = {
+#    'default': dj_database_url.parse(env('DATABASE_URL'))
+#}
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fitness_db',  # Nombre de tu base de datos MySQL local
+        'USER': 'root',       # Usuario de MySQL local (por defecto 'root')
+        'PASSWORD': 'division-1',  # Contraseña de MySQL local
+        'HOST': 'localhost',  # Host de MySQL local
+        'PORT': '3306',       # Puerto de MySQL local
     }
 }
+
+DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
 # Password validation
@@ -165,7 +185,7 @@ STATICFILES_DIRS = [
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 REST_FRAMEWORK = {
-    'DEFAULT_PERMISSION_CLASES': [
+    'DEFAULT_PERMISSION_CLASSES': [
         'rest_framework.permissions.IsAuthenticatedOrReadOnly'
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
@@ -178,7 +198,7 @@ SIMPLE_JWT = {
     'AUTH_HEADER_TYPES': ('JWT', ),
     'ACCESS_TOKEN_LIFETIME': timedelta(minutes=10080),
     'REFRESH_TOKEN_LIFETIME': timedelta(days=30),
-    'ROTATE_REFRESFH_TOKENS':True,
+    'ROTATE_REFRESH_TOKENS':True,
     'BLACKLIST_AFTER_ROTATION': True,
     'AUTH_TOKEN_CLASSES': (
         'rest_framework_simplejwt.tokens.AccessToken',
@@ -210,6 +230,8 @@ DJOSER = {
 }
 
 AUTH_USER_MODEL = 'user.UserAccount'
+
+CORS_ALLOW_CREDENTIALS = True
 
 CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEV')
 CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEV')

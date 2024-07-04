@@ -1,7 +1,7 @@
 import axios from "axios";
 
-// Configurar Axios para incluir CSRF token
-axios.defaults.xsrfCookieName = 'csrftoken';
-axios.defaults.xsrfHeaderName = 'X-CSRFToken';
+// Configuración global de Axios para incluir el token CSRF
+axios.defaults.xsrfCookieName = 'csrftoken';  // Nombre de la cookie donde se almacena el token CSRF
+axios.defaults.xsrfHeaderName = 'X-CSRFToken';  // Nombre del header que Axios utilizará para enviar el token CSRF
 
 export default axios;

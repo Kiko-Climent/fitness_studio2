@@ -4,7 +4,7 @@ import Carousel from 'next-elastic-carousel'
 function TrainingList() {
     const posts = [
         {
-            id:'1234-logs',
+          id:'1234-logs',
           title: 'Boost your conversion rate',
           href: '#',
           category: { name: 'Article', href: '#' },
@@ -23,7 +23,7 @@ function TrainingList() {
           },
         },
         {
-            id:'1234-qwer',
+          id:'1234-qwer',
           title: 'How to use search engine optimization to drive sales',
           href: '#',
           category: { name: 'Video', href: '#' },
@@ -42,7 +42,7 @@ function TrainingList() {
           },
         },
         {
-            id:'1234-koki',
+          id:'1234-koki',
           title: 'Improve your customer experience',
           href: '#',
           category: { name: 'Case Study', href: '#' },
@@ -61,7 +61,7 @@ function TrainingList() {
           },
         },
         {
-            id:'1234-polr',
+          id:'1234-polr',
           title: 'Improve your customer experience',
           href: '#',
           category: { name: 'Case Study', href: '#' },
