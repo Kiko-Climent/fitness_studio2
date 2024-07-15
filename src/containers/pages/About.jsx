@@ -38,7 +38,6 @@ function About(){
             <div className="pt-24">
                 <Header/>
             </div>
-            <Footer />
         </Layout>
     )
 }

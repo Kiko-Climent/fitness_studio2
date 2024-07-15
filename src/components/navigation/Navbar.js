@@ -21,6 +21,12 @@ const solutions = [
         icon: 'bx bx-dumbbell',
     },
     {
+        name: 'Contracts',
+        description: 'Get your membership',
+        href: '/contracts',
+        icon: 'bx bx-file',
+    },
+    {
         name: 'About',
         description: 'Why to choose us?',
         href: '/about',

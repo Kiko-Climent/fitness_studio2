@@ -21,7 +21,6 @@ function Home(){
                 <CTA/>
                 <Partners/>
             </div>
-            <Footer />
         </Layout>
     )
 }

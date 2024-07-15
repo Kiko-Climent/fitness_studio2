@@ -40,7 +40,6 @@ function Training(){
                 <Header/>
                 <TrainingList/>
             </div>
-            <Footer />
         </Layout>
     )
 }

@@ -37,7 +37,6 @@ function Members(){
             <div className="pt-24">
                 Member Area
             </div>
-            <Footer />
         </Layout>
     )
 }

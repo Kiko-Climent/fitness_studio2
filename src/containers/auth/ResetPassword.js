@@ -97,7 +97,6 @@ function ResetPassword({
             </div>
           </div>
         </div>
-        <Footer/>
       </Layout>
     )
   }

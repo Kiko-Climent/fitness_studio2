@@ -15,10 +15,8 @@ class Course(models.Model):
     duration = models.DurationField()
     capacity = models.PositiveIntegerField()
     schedule = models.CharField(max_length=255)
+    image_url = models.URLField(max_length=500, default='https://res.cloudinary.com/dzlveh6fi/image/upload/v1718114697/bodypump2_yjclsk.jpg')
 
 
     def __str__(self):
         return self.name
-
-
-

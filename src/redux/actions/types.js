@@ -31,3 +31,11 @@ export const RESET_PASSWORD_CONFIRM_FAIL = 'RESET_PASSWORD_CONFIRM_FAIL';
 // Alerts
 export const SET_ALERT = 'SET_ALERT';
 export const REMOVE_ALERT = 'REMOVE_ALERT';
+
+// Categories // Contracts
+export const GET_CATEGORIES_SUCCESS = 'GET_CATEGORIES_SUCCESS';
+export const GET_CATEGORIES_FAIL = 'GET_CATEGORIES_FAIL';
+
+// Courses
+export const GET_COURSES_SUCCESS = 'GET_COURSES_SUCCESS'
+export const GET_COURSES_FAIL = 'GET_COURSES_FAIL'

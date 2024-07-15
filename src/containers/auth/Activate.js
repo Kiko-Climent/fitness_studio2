@@ -54,7 +54,6 @@ const Activate = ({
                     </div>
                 </div>
             </div>
-            <Footer />
         </Layout>
     );
     

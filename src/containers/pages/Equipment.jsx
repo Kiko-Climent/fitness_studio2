@@ -40,7 +40,6 @@ function Equipment(){
                 <Header/>
                 <Features2/>
             </div>
-            <Footer />
         </Layout>
     )
 }

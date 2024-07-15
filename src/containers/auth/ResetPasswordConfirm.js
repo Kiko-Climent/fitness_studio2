@@ -118,7 +118,6 @@ function ResetPasswordConfirm({
             </div>
           </div>
         </div>
-        <Footer/>
       </Layout>
     )
   }

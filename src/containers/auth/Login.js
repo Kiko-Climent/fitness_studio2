@@ -113,7 +113,6 @@ function Login({
             </div>
           </div>
         </div>
-        <Footer/>
       </Layout>
     )
   }
