@@ -1,4 +1,3 @@
-import Footer from "components/navigation/Footer";
 import Navbar from "components/navigation/Navbar";
 import Layout from "hocs/layouts/Layout";
 import { useState, useEffect } from "react";
@@ -46,25 +45,20 @@ function Signup({
         <Navbar/>
         <div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8 mt-12">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">
-            <img
-              className="mx-auto h-12 w-auto"
-              src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg"
-              alt="Workflow"
-            />
-            <h2 className="mt-6 text-center text-3xl font-extrabold text-gray-900">Sign up to become a member</h2>
-            <p className="mt-2 text-center text-sm text-gray-600">
+            <h2 className="mt-6 text-center text-4xl lg:text-7xl tracking-tight font-extrabold text-[#ec4eca]">sign up to become a member</h2>
+            <p className="mt-2 text-center text-sm text-[#7ef455]">
               Or{' '}
-              <a href="/login" className="font-medium text-indigo-600 hover:text-indigo-500">
-                Log in to your account
+              <a href="/login" className="text-lg text-[#7ef455] hover:font-black hover:underline decoration-[#ec4eca]">
+                log in to your account
               </a>
             </p>
           </div>
           <div className="mt-8 sm:mx-auto sm:w-full sm:max-w-md">
-            <div className="bg-white py-8 px-4 shadow sm:rounded-lg sm:px-10">
+            <div className="bg-white py-8 px-4 sm:px-10">
               <form onSubmit={e=>onSubmit(e)} className="space-y-6">
                 <div>
-                  <label htmlFor="first_name" className="block text-sm font-medium text-gray-700">
-                    First Name
+                  <label htmlFor="first_name" className="block text-3xl tracking-tight font-bold text-[#7ef455]">
+                    first name:
                   </label>
                   <div className="mt-1">
                     <input
@@ -73,13 +67,13 @@ function Signup({
                       onChange={e=>onChange(e)}
                       type="text"
                       required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-x-transparent border-t-transparent border-b-[#7ef455] focus:border-2 focus:border-[#7ef455] focus:ring-transparent placeholder-white text-[#2c555b] font-bold sm:text-sm"
                     />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="last_name" className="block text-sm font-medium text-gray-700">
-                    Last Name
+                  <label htmlFor="last_name" className="block text-3xl tracking-tight font-bold text-[#7ef455] text-right">
+                    :last name
                   </label>
                   <div className="mt-1">
                     <input
@@ -88,13 +82,13 @@ function Signup({
                       onChange={e=>onChange(e)}
                       type="text"
                       required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-x-transparent border-t-transparent border-b-[#7ef455] focus:border-2 focus:border-[#7ef455] focus:ring-transparent placeholder-white text-[#2c555b] font-bold sm:text-sm"
                     />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Email address
+                  <label htmlFor="email" className="block text-3xl tracking-tight font-bold text-[#7ef455]">
+                    email address:
                   </label>
                   <div className="mt-1">
                     <input
@@ -103,13 +97,13 @@ function Signup({
                       onChange={e=>onChange(e)}
                       type="email"
                       required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-x-transparent border-t-transparent border-b-[#7ef455] focus:border-2 focus:border-[#7ef455] focus:ring-transparent placeholder-white text-[#2c555b] font-bold sm:text-sm"
                     />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                    Password
+                  <label htmlFor="password" className="block text-3xl tracking-tight font-bold text-[#7ef455] text-right">
+                    :password
                   </label>
                   <div className="mt-1">
                     <input
@@ -118,13 +112,13 @@ function Signup({
                       onChange={e=>onChange(e)}
                       type="password"
                       required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-x-transparent border-t-transparent border-b-[#7ef455] focus:border-2 focus:border-[#7ef455] focus:ring-transparent placeholder-white text-[#2c555b] font-bold sm:text-sm"
                     />
                   </div>
                 </div>
                 <div>
-                  <label htmlFor="password" className="block text-sm font-medium text-gray-700">
-                    Repeat Password
+                  <label htmlFor="password" className="block text-3xl tracking-tight font-bold text-[#7ef455]">
+                    repeat password:
                   </label>
                   <div className="mt-1">
                     <input
@@ -133,16 +127,16 @@ function Signup({
                       onChange={e=>onChange(e)}
                       type="password"                      
                       required
-                      className="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                      className="block w-full px-3 py-2 border border-x-transparent border-t-transparent border-b-[#7ef455] focus:border-2 focus:border-[#7ef455] focus:ring-transparent placeholder-white text-[#2c555b] font-bold sm:text-sm"
                     />
                   </div>
                 </div>
                 <div>
                   <button
                     type="submit"
-                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+                    className="align-middle select-none tracking-tight font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-5xl py-2 px-4 text-[#ec4eca] hover:bg-[#ec4eca] hover:text-[#7ef455] focus:ring focus:ring-green-200 active:opacity-[0.85] block w-full mt-6"
                   >
-                    Register
+                    register.
                   </button>
                 </div>
               </form>

@@ -1,4 +1,3 @@
-import Footer from "components/navigation/Footer";
 import Navbar from "components/navigation/Navbar";
 import Layout from "hocs/layouts/Layout";
 import { useState, useEffect } from "react";
@@ -6,7 +5,7 @@ import { Navigate, useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import { reset_password_confirm } from "redux/actions/auth";
 import { Oval } from "react-loader-spinner";
-import { Link } from "react-router-dom";
+
 
 
 function ResetPasswordConfirm({

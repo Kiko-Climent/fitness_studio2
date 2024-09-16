@@ -37,6 +37,7 @@ DJANGO_APPS = [
 PROJECT_APPS = [
     'apps.courses',
     'apps.user',
+    'apps.user_profile',
     'apps.category',
 ]
 
@@ -223,7 +224,7 @@ DJOSER = {
     'SOCIAL_AUTH_TOKEN_STRATEGY': 'djoser.social.token.jwt.TokenStrategy',
     'SOCIAL_AUTH_ALLOWED_REDIRECT_URIS': ['http://localhost:8000/google', 'http://localhost:8000/facebook'],
     'SERIALIZERS': {
-        'user_create': 'apps.user.serializers.UserSerializer',
+        'user_create': 'apps.user.serializers.UserCreateSerializer',
         'user': 'apps.user.serializers.UserSerializer',
         'current_user': 'apps.user.serializers.UserSerializer',
         'user_delete': 'djoser.serializers.UserDeleteSerializer',

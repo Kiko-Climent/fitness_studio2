@@ -183,6 +183,8 @@ export const login = (email, password) => async dispatch => {
             });
             dispatch(setAlert('Login failed', 'red'));
         }
+        localStorage.setItem('access', res.data.access);
+        localStorage.setItem('refresh', res.data.refresh);
     }
     catch(err){
         dispatch({
@@ -383,7 +385,7 @@ export const reset_password_confirm = (uid, token, new_password, re_new_password
 };
 
 
-export const logout = () => async dispatch => {
+export const logout = () => dispatch => {
     dispatch({
         type: LOGOUT
     });

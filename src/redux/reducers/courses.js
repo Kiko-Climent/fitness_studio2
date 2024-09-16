@@ -4,7 +4,7 @@ import {
 } from '../actions/types'
 
 const initialState = {
-    courses: null
+    courses: []
 };
 
 export default function Courses(state = initialState, actions) {
@@ -14,12 +14,12 @@ export default function Courses(state = initialState, actions) {
         case GET_COURSES_SUCCESS:
             return {
                 ...state,
-                courses: payload.courses
+                courses: payload
             }
         case GET_COURSES_FAIL:
             return {
                 ...state,
-                courses: null
+                courses: []
             }
         default:
             return state

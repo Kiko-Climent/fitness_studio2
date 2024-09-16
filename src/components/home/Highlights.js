@@ -1,3 +1,5 @@
+import { useEffect, useRef, useState } from 'react';
+
 const posts = [
     {
       title: 'Boost your conversion rate',
@@ -49,42 +51,57 @@ const posts = [
   ]
   
   export default function Highlights() {
+    const highlightsRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+  
+    useEffect(() => {
+      const handleScroll = () => {
+        const sectionTop = highlightsRef.current.getBoundingClientRect().top;
+        const triggerPoint = window.innerHeight * 0.5;
+  
+        if (sectionTop < triggerPoint) {
+          setIsVisible(true);
+        } else {
+          setIsVisible(false);
+        }
+      };
+  
+      window.addEventListener('scroll', handleScroll);
+  
+      return () => {
+        window.removeEventListener('scroll', handleScroll);
+      };
+    }, []);
+  
     return (
-      <div className="relative bg-gray-50 px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
+      <div ref={highlightsRef} className="relative px-4 pt-16 pb-20 sm:px-6 lg:px-8 lg:pt-24 lg:pb-28">
         <div className="absolute inset-0">
           <div className="h-1/3 bg-white sm:h-2/3" />
         </div>
         <div className="relative mx-auto max-w-7xl">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Highlights</h2>
-            <p className="mx-auto mt-3 max-w-2xl text-xl text-gray-500 sm:mt-4">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsa libero labore natus atque, ducimus sed.
-            </p>
+            <h2 className={`text-4xl lg:text-6xl font-bold tracking-tight text-[#7ef455] custom-strike ${isVisible ? 'active' : ''}`}>
+              highlights.
+            </h2>
           </div>
           <div className="mx-auto mt-12 grid max-w-lg gap-5 lg:max-w-none lg:grid-cols-3">
             {posts.map((post) => (
-              <div key={post.title} className="flex flex-col overflow-hidden rounded-lg shadow-lg">
+              <div key={post.title} className="hiden flex flex-col overflow-hidden">
                 <div className="flex-shrink-0">
-                  <img className="h-48 w-full object-cover" src={post.imageUrl} alt="" />
+                  <img className="h-48 w-full object-cover filter sepia saturate-50 -hue-rotate-60" src={post.imageUrl} alt="" />
                 </div>
-                <div className="flex flex-1 flex-col justify-between bg-white p-6">
+                <div className="flex flex-1 flex-col justify-between bg-white p-6 border-l-2 border-r-2 border-b-2 border-[#7ef455]">
                   <div className="flex-1">
-                    <p className="text-sm font-medium text-indigo-600">
-                      <a href={post.category.href} className="hover:underline">
-                        {post.category.name}
-                      </a>
-                    </p>
                     <a href={post.href} className="mt-2 block">
-                      <p className="text-xl font-semibold text-gray-900">{post.title}</p>
-                      <p className="mt-3 text-base text-gray-500">{post.description}</p>
+                      <p className="text-xl font-semibold text-[#7ef455]">{post.title}</p>
+                      <p className="mt-3 text-base text-[#2c555b]">{post.description}</p>
                     </a>
                   </div>
-                  
                 </div>
               </div>
             ))}
           </div>
         </div>
       </div>
-    )
+    );
   }

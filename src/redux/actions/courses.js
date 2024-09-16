@@ -1,5 +1,4 @@
 import axios from 'axios';
-
 import {
     GET_COURSES_FAIL,
     GET_COURSES_SUCCESS,
@@ -26,6 +25,7 @@ export const get_courses = () => async dispatch => {
             });
         }
     } catch(err) {
+        console.error(err);
         dispatch({
             type: GET_COURSES_FAIL
         });

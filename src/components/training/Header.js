@@ -1,4 +1,5 @@
 export default function Header() {
+    
     return(
         <div id="about" className="relative bg-white overflow-hidden my-16">
             <div className="max-w-7xl mx-auto">
@@ -12,23 +13,18 @@ export default function Header() {
 
                     <main className="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
                         <div className="sm:text-center lg:text-left">
-                            <h2 className="my-6 text-2xl tracking-tight font-extrabold text-gray-900 sm:text-3xl md:text-4xl">
-                                Training
+                            <h2 className="my-6 tracking-tight font-bold text-[#7ef455] custom-strike-sections active text-5xl ">
+                                training.
                             </h2>
 
-                            <p>
-                                Donec porttitor, enim ut dapibus lobortis, lectus sem tincidunt dui, eget ornare lectus ex non
-                                libero. Nam rhoncus diam ultrices porttitor laoreet. Ut mollis fermentum ex, vel viverra lorem
-                                volutpat sodales. In ornare porttitor odio sit amet laoreet. Sed laoreet, nulla a posuere
-                                ultrices, purus nulla tristique turpis, hendrerit rutrum augue quam ut est. Fusce malesuada
-                                posuere libero, vitae dapibus eros facilisis euismod. Sed sed lobortis justo, ut tincidunt
-                                velit. Mauris in maximus eros.
+                            <p className="text-[#2c555b]">
+                            Our training programs are designed to help you achieve your fitness goals, no matter your experience level. From strength building and endurance to flexibility and conditioning, we offer a variety of classes tailored to your needs. No mather if you’re looking to join a high-intensity session like CrossFit or BodyPump, or prefer something more focused on balance and mindfulness like Yoga or Pilates, we have something for everyone.
                             </p>
                         </div>
                     </main>
                 </div>
             </div>
-            <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+            <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2 border-4 border-[#ec4eca]">
                 <img className="h-56 w-full object-cover object-top sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://res.cloudinary.com/dzlveh6fi/image/upload/v1717754564/fitness_girl2_myd1af.jpg" alt=""/>
             </div>
         </div>

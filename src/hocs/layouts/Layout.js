@@ -24,6 +24,7 @@ import { useEffect } from 'react';
 import { connect } from 'react-redux';
 import { motion } from 'framer-motion';
 import { check_authenticated, load_user, refresh } from 'redux/actions/auth';
+import { get_user_profile } from 'redux/actions/profile';
 import Navbar from 'components/navigation/Navbar';
 import Footer from 'components/navigation/Footer';
 
@@ -33,6 +34,7 @@ const Layout = (props) => {
         props.refresh();
         props.check_authenticated();
         props.load_user();
+        props.get_user_profile();
     }, []);
 
     return (
@@ -52,4 +54,5 @@ export default connect(null, {
     check_authenticated,
     load_user,
     refresh,
+    get_user_profile,
 })(Layout);
