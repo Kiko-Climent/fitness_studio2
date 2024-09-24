@@ -5,27 +5,27 @@ export default function TrialDay () {
                 <div className="mx-auto mt-12 max-w-2xl border border-[#7ef455] sm:mt-16 lg:mx-0 lg:flex lg:max-w-none">
                 <div className="p-8 sm:p-10 lg:flex-auto">
                     <h3 className="text-5xl font-bold tracking-tight text-[#7ef455]">trial day ticket.</h3>
-                    <p className="mt-1 text-lg font-bold leading-7 text-[#2c555b]">not sure about the plan that fits you better?, try our facilities first.</p>
+                    <p className="text-xl font-bold leading-7 text-[#2c555b]">not sure about the plan that fits you better?, try our facilities first.</p>
                     <div className="mt-10 flex items-center gap-x-4">
-                    <h4 className="flex-none text-normal font-semibold leading-6 text-[#ec4eca]">what’s included</h4>
+                    <h4 className="flex-none text-3xl font-semibold leading-6 text-[#ec4eca]">what’s included</h4>
                     <div className="h-px flex-auto bg-[#7ef455]"></div>
                     </div>
-                    <ul role="list" className="grid grid-cols-1 gap-2 text-sm leading-6 text-[#2c555b] font-bold sm:grid-cols-2 ">
+                    <ul role="list" className="grid leading-2 text-[#2c555b] font-bold sm:grid-cols-2 ">
                     <li className="flex items-start"> {/* Alineación superior */}
                         <div className="text-7xl leading-none">·</div> {/* Remover espacio adicional con leading-none */}
-                        <span className="self-center pt-3">cardio & weight-machines</span> {/* Centrar el texto verticalmente */}
+                        <span className="self-center pt-3 text-2xl">cardio & weight-machines</span> {/* Centrar el texto verticalmente */}
                     </li>
                     <li className="flex items-start">
                         <div className="text-7xl leading-none">·</div>
-                        <span className="self-center pt-3">try our courses</span>
+                        <span className="self-center pt-3 text-2xl">try our courses</span>
                     </li>
                     <li className="flex items-start">
                         <div className="text-7xl leading-none">·</div>
-                        <span className="self-center pt-3">enjoy our olympic pool</span>
+                        <span className="self-center pt-3 text-2xl">enjoy our olympic pool</span>
                     </li>
                     <li className="flex items-start">
                         <div className="text-7xl leading-none">·</div>
-                        <span className="self-center pt-3">relax in our sauna</span>
+                        <span className="self-center pt-3 text-2xl">relax in our sauna</span>
                     </li>
                     </ul>
 

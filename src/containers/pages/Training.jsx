@@ -36,7 +36,7 @@ function Training(){
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
             <Navbar />
-            <div className="pt-24">
+            <div className="">
                 <Header/>
                 <TrainingList/>
             </div>

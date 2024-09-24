@@ -1,6 +1,5 @@
 import Features2 from "components/equipment/Features2"
 import Header from "components/equipment/Header"
-import Footer from "components/navigation/Footer"
 import Navbar from "components/navigation/Navbar"
 import Layout from "hocs/layouts/Layout"
 import { useEffect } from "react"
@@ -36,7 +35,7 @@ function Equipment(){
                 <meta name="twitter:card" content="summary_large_image" />
             </Helmet>
             <Navbar />
-            <div className="pt-24">
+            <div className="">
                 <Header/>
                 <Features2/>
             </div>
