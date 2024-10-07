@@ -264,6 +264,8 @@ export const refresh = () => async dispatch => {
                     type: REFRESH_SUCCESS,
                     payload: res.data
                 });
+                
+
             } else {
                 dispatch({
                     type: REFRESH_FAIL

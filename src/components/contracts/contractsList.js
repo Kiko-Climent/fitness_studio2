@@ -28,28 +28,29 @@ const contractsData = [
 const ContractCard = ({ contract }) => (
   
   <div className="relative flex flex-col bg-clip-border bg-white border border-[#7ef455]">
-    <div className="relative bg-clip-border flex-row items-center rounded-xl overflow-hidden bg-transparent shadow-none !-mt-3 -mb-2 pl-1">
-    <div className="flex flex-col lg:flex-row items-center text-center"> {/* Contenedor flex */}
-        <h5 className="font-bold tracking-tight text-5xl leading-snug text-[#7ef455]">{contract.title}</h5>
-        <p className="antialiased text-xl lg:text-3xl tracking-tight font-bold !text-[#2c555b] pl-1 pt-0 lg:pt-4">{contract.description}</p>
-    </div>
-    <h3 className="antialiased tracking-tight text-4xl font-semibold leading-snug text-[#ec4eca]  -mt-5 text-right">{contract.price}</h3>
-  </div>
-    <div className="flex-grow p-6 border-t border-[#7ef455]">
-      <ul className="flex flex-col">
-        {contract.features.map((feature, index) => (
-          <li key={index} className="flex items-center gap-3 text-gray-700">
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true" className="h-4 w-4 text-blue-gray-900">
-              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
-            </svg>
-            <p className="block antialiased text-3xl tracking-tight font-bold text-[#2c555b]">{feature}</p>
-          </li>
-        ))}
-      </ul>
-    </div>
-    <div className="align-middle select-none tracking-tight font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-5xl py-2 px-4 text-[#ec4eca] hover:bg-[#ec4eca] hover:text-[#7ef455] focus:ring focus:ring-green-200 active:opacity-[0.85] block w-full mt-6" type="button">
-      get it now
-    </div>
+      <div className="relative bg-clip-border flex-row rounded-xl overflow-hidden bg-transparent shadow-none pl-1">
+        <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-4"> {/* Contenedor flex */}
+            <h5 className="font-bold tracking-tight text-5xl leading-snug text-[#7ef455] text-center">{contract.title}</h5>
+            <h3 className="antialiased tracking-tight text-4xl font-semibold leading-snug text-[#ec4eca] -pt-3 lg:pt-3 text-center">{contract.price}</h3>
+        </div>
+        
+        <p className="antialiased text-xl lg:text-3xl tracking-tight font-bold !text-[#2c555b] !-mt-3 text-center">{contract.description}</p>
+      </div>
+      <div className="flex-grow p-6 border-t border-[#7ef455]">
+        <ul className="flex flex-col">
+          {contract.features.map((feature, index) => (
+            <li key={index} className="flex items-center gap-3 text-gray-700">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="2" stroke="currentColor" aria-hidden="true" className="h-4 w-4 text-blue-gray-900">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5"></path>
+              </svg>
+              <p className="block antialiased text-3xl tracking-tight font-bold text-[#2c555b]">{feature}</p>
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="align-middle select-none tracking-tight font-bold text-center transition-all disabled:opacity-50 disabled:shadow-none disabled:pointer-events-none text-5xl py-2 px-4 text-[#ec4eca] hover:bg-[#ec4eca] hover:text-[#7ef455] focus:ring focus:ring-green-200 active:opacity-[0.85] block w-full mt-6" type="button">
+        get it now
+      </div>
   </div>
 );
 
@@ -93,7 +94,7 @@ const ContractsList = () => {
         {/* Aplicamos la animación al título */}
         <animated.h2
           ref={headerRef}
-          className={`my-6 tracking-tight font-bold text-[#7ef455] custom-strike-sections ${strikeActive ? 'active' : ''} text-5xl`}
+          className={`my-6 tracking-tight font-bold text-[#7ef455] custom-strike-sections ${strikeActive ? 'active' : ''} text-4xl lg:text-5xl`}
           style={props}
         >
           memberships.

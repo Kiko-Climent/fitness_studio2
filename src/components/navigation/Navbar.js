@@ -60,7 +60,7 @@ function Navbar({
         {
             name: 'member area',
             description: 'Sign up / Log in',
-            href: '/signup',
+            href: '/members',
         }
     ];
 
