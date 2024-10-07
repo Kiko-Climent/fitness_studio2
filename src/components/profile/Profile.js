@@ -107,7 +107,7 @@ function UserProfile() {
                     value={formData.address}
                     onChange={handleChange}
                     className="border-0 border-b-2 border-[#ec4eca] px-4 py-2 w-full"
-                    readOnly={!isEditing}
+                    /* readOnly={!isEditing} */
                   />
                 </div>
                 <div className="w-full lg:w-6/12 px-4 mb-4">
@@ -120,7 +120,7 @@ function UserProfile() {
                     value={formData.city}
                     onChange={handleChange}
                     className="border-0 border-b-2 border-[#ec4eca] px-4 py-2 w-full"
-                    readOnly={!isEditing}
+                    /* readOnly={!isEditing} */
                   />
                 </div>
                 <div className="w-full lg:w-6/12 px-4 mb-4">
@@ -133,7 +133,7 @@ function UserProfile() {
                     value={formData.zipcode}
                     onChange={handleChange}
                     className="border-0 border-b-2 border-[#ec4eca] px-4 py-2 w-full"
-                    readOnly={!isEditing}
+                    /* readOnly={!isEditing} */
                   />
                 </div>
                 <div className="w-full lg:w-6/12 px-4 mb-4">
@@ -146,7 +146,7 @@ function UserProfile() {
                     value={formData.phone}
                     onChange={handleChange}
                     className="border-0 border-b-2 border-[#ec4eca] px-4 py-2 w-full"
-                    readOnly={!isEditing}
+                    /* readOnly={!isEditing} */
                   />
                 </div>
               </div>
@@ -166,7 +166,7 @@ function UserProfile() {
                     onClick={() => setIsEditing(true)}
                     className="bg-[#7ef455] text-white px-4 py-2 rounded"
                   >
-                    Edit
+                    Save
                   </button>
                 </div>
               )}
