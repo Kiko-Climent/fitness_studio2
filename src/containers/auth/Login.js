@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 
 import { connect } from "react-redux";
 import { login } from "redux/actions/auth";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 function Login({
@@ -14,6 +14,8 @@ function Login({
     useEffect(()=>{
         window.scrollTo(0,0)
     },[])
+
+    const navigate = useNavigate();
 
     const [formData, setFormData] = useState({
         email: '',
@@ -29,7 +31,7 @@ function Login({
 
     const onSubmit = e =>{
         e.preventDefault();
-        login(email, password,);
+        login(email, password, navigate);
     }
     return (
       <Layout>

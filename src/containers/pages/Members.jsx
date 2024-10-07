@@ -1,5 +1,6 @@
 import Footer from "components/navigation/Footer"
 import Navbar from "components/navigation/Navbar"
+import Signup from "containers/auth/Signup"
 import Layout from "hocs/layouts/Layout"
 import { useEffect } from "react"
 import { Helmet } from 'react-helmet-async'
@@ -35,7 +36,7 @@ function Members(){
             </Helmet>
             <Navbar />
             <div className="pt-24">
-                Member Area
+                <Signup/>
             </div>
         </Layout>
     )

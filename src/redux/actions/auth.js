@@ -145,7 +145,7 @@ export const load_user = () => async dispatch => {
     }
 };
 
-export const login = (email, password) => async dispatch => {
+export const login = (email, password, navigate) => async dispatch => {
     dispatch({
         type: SET_AUTH_LOADING,
     });
@@ -174,6 +174,7 @@ export const login = (email, password) => async dispatch => {
                 type: REMOVE_AUTH_LOADING
             });
             dispatch(setAlert('Succesfully signedin', 'green'))
+            navigate('/profile');
         } else {
             dispatch({
                 type: LOGIN_FAIL
@@ -185,6 +186,7 @@ export const login = (email, password) => async dispatch => {
         }
         localStorage.setItem('access', res.data.access);
         localStorage.setItem('refresh', res.data.refresh);
+        
     }
     catch(err){
         dispatch({
@@ -264,6 +266,8 @@ export const refresh = () => async dispatch => {
                     type: REFRESH_SUCCESS,
                     payload: res.data
                 });
+                
+
             } else {
                 dispatch({
                     type: REFRESH_FAIL
