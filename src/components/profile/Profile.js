@@ -156,7 +156,7 @@ function UserProfile() {
                     type="submit"
                     className="bg-[#7ef455] text-white px-4 py-2 rounded"
                   >
-                    Save
+                    Edit / Save
                   </button>
                 </div>
               ) : (
@@ -166,7 +166,7 @@ function UserProfile() {
                     onClick={() => setIsEditing(true)}
                     className="bg-[#7ef455] text-white px-4 py-2 rounded"
                   >
-                    Save
+                    Edit / Save
                   </button>
                 </div>
               )}
