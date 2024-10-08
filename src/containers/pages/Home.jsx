@@ -24,8 +24,6 @@ function Home(){
         window.scrollTo({ top: 0, behavior: 'smooth' });
       }
     }, [pathname, hash]);
-    
-    
 
     return(
         <Layout>
