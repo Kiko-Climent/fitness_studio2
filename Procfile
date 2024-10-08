@@ -1,3 +1,3 @@
-web: gunicorn fitness_studio.wsgi --log-file -
+web: gunicorn core.wsgi --log-file -
 
 
