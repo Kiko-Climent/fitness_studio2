@@ -250,7 +250,8 @@ EMAIL_HOST_PASSWORD = 'vmqp peaa nvuj pqcx'
 DEFAULT_FROM_EMAIL = 'k.climent83@gmail.com'
 
 if not DEBUG:
-    ALLOWED_HOSTS=os.environ.get('ALLOWED_HOSTS_DEPLOY')
+    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS_DEPLOY').split(',')
+
     CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
     CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
 
