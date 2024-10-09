@@ -117,18 +117,18 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #DATABASES = {
 #    'default': dj_database_url.parse(env('DATABASE_URL'))
 #}
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fitness_db',  # Nombre de tu base de datos MySQL local
-        'USER': 'root',       # Usuario de MySQL local (por defecto 'root')
-        'PASSWORD': 'division-1',  # Contraseña de MySQL local
-        'HOST': 'localhost',  # Host de MySQL local
-        'PORT': '3306',       # Puerto de MySQL local
-    }
-}
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'fitness_db',  # Nombre de tu base de datos MySQL local
+#        'USER': 'root',       # Usuario de MySQL local (por defecto 'root')
+#        'PASSWORD': 'division-1',  # Contraseña de MySQL local
+#        'HOST': 'localhost',  # Host de MySQL local
+#        'PORT': '3306',       # Puerto de MySQL local
+#    }
+#}
 
-DATABASES['default']['ATOMIC_REQUESTS'] = True
+#DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
 # Password validation
