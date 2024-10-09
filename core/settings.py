@@ -20,7 +20,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG')
 
-ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS_DEV')
+ALLOWED_HOSTS = env.list('ALLOWED_HOSTS_DEV')
 
 
 # Application definition
@@ -117,17 +117,27 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #DATABASES = {
 #    'default': dj_database_url.parse(env('DATABASE_URL'))
 #}
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fitness_db',  # Nombre de tu base de datos MySQL local
-        'USER': 'root',       # Usuario de MySQL local (por defecto 'root')
-        'PASSWORD': 'division-1',  # Contraseña de MySQL local
-        'HOST': 'localhost',  # Host de MySQL local
-        'PORT': '3306',       # Puerto de MySQL local
+if os.getenv('HEROKU', False):
+    # Configuración para producción (Heroku con PostgreSQL)
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=os.getenv('DATABASE_URL')
+        )
     }
-}
+else:
+    # Configuración para desarrollo (local con MySQL)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'fitness_db',  # Nombre de tu base de datos MySQL local
+            'USER': 'root',       # Usuario de MySQL local
+            'PASSWORD': 'division-1',  # Contraseña de MySQL local
+            'HOST': 'localhost',  # Host de MySQL local
+            'PORT': '3306',       # Puerto de MySQL local
+        }
+    }
 
+# Activar atomic requests para ambas configuraciones
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
@@ -250,8 +260,7 @@ EMAIL_HOST_PASSWORD = 'vmqp peaa nvuj pqcx'
 DEFAULT_FROM_EMAIL = 'k.climent83@gmail.com'
 
 if not DEBUG:
-    ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS_DEPLOY').split(',')
-
+    ALLOWED_HOSTS=env.list('ALLOWED_HOSTS_DEPLOY')
     CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
     CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
 
