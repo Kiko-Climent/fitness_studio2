@@ -255,6 +255,9 @@ if not DEBUG:
     CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
 
     DATABASES = {
-    'default': env.db('DATABASE_URL'),
+    'default': dj_database_url.parse(env('DATABASE_URL'))
     }
+    #DATABASES = {
+    #'default': env.db('DATABASE_URL'),
+    #}
     DATABASES['default']['ATOMIC_REQUESTS'] = True
