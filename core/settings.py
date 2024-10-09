@@ -117,27 +117,17 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #DATABASES = {
 #    'default': dj_database_url.parse(env('DATABASE_URL'))
 #}
-if os.getenv('HEROKU', False):
-    # Configuración para producción (Heroku con PostgreSQL)
-    DATABASES = {
-        'default': dj_database_url.config(
-            default=os.getenv('DATABASE_URL')
-        )
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fitness_db',  # Nombre de tu base de datos MySQL local
+        'USER': 'root',       # Usuario de MySQL local (por defecto 'root')
+        'PASSWORD': 'division-1',  # Contraseña de MySQL local
+        'HOST': 'localhost',  # Host de MySQL local
+        'PORT': '3306',       # Puerto de MySQL local
     }
-else:
-    # Configuración para desarrollo (local con MySQL)
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'fitness_db',  # Nombre de tu base de datos MySQL local
-            'USER': 'root',       # Usuario de MySQL local
-            'PASSWORD': 'division-1',  # Contraseña de MySQL local
-            'HOST': 'localhost',  # Host de MySQL local
-            'PORT': '3306',       # Puerto de MySQL local
-        }
-    }
+}
 
-# Activar atomic requests para ambas configuraciones
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
