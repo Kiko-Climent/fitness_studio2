@@ -127,8 +127,13 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #        'PORT': '3306',       # Puerto de MySQL local
 #    }
 #}
-
+#
 #DATABASES['default']['ATOMIC_REQUESTS'] = True
+
+DATABASES = {
+    'default': dj_database_url.parse(env('DATABASE_URL'))
+    }
+DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
 # Password validation
@@ -254,10 +259,5 @@ if not DEBUG:
     CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
     CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
 
-    DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_URL'))
-    }
-    #DATABASES = {
-    #'default': env.db('DATABASE_URL'),
-    #}
-    DATABASES['default']['ATOMIC_REQUESTS'] = True
+
+
