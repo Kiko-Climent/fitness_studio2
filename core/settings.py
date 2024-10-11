@@ -117,23 +117,23 @@ WSGI_APPLICATION = 'core.wsgi.application'
 #DATABASES = {
 #    'default': dj_database_url.parse(env('DATABASE_URL'))
 #}
-#DATABASES = {
-#    'default': {
-#        'ENGINE': 'django.db.backends.mysql',
-#        'NAME': 'fitness_db',  # Nombre de tu base de datos MySQL local
-#        'USER': 'root',       # Usuario de MySQL local (por defecto 'root')
-#        'PASSWORD': 'division-1',  # Contraseña de MySQL local
-#        'HOST': 'localhost',  # Host de MySQL local
-#        'PORT': '3306',       # Puerto de MySQL local
-#    }
-#}
-#
-#DATABASES['default']['ATOMIC_REQUESTS'] = True
-
 DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_URL'))
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'fitness_db',  # Nombre de tu base de datos MySQL local
+        'USER': 'root',       # Usuario de MySQL local (por defecto 'root')
+        'PASSWORD': 'division-1',  # Contraseña de MySQL local
+        'HOST': 'localhost',  # Host de MySQL local
+        'PORT': '3306',       # Puerto de MySQL local
     }
+}
+
 DATABASES['default']['ATOMIC_REQUESTS'] = True
+
+#DATABASES = {
+#    'default': dj_database_url.parse(env('DATABASE_URL'))
+#    }
+#DATABASES['default']['ATOMIC_REQUESTS'] = True
 
 
 # Password validation
@@ -259,5 +259,10 @@ if not DEBUG:
     CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
     CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
 
-
-
+    DATABASES = {
+    'default': dj_database_url.parse(env('DATABASE_URL'))
+    }
+    #DATABASES = {
+    #'default': env.db('DATABASE_URL'),
+    #}
+    DATABASES['default']['ATOMIC_REQUESTS'] = True
