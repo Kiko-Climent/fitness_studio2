@@ -4,6 +4,7 @@ import dj_database_url
 import environ
 from datetime import timedelta
 
+
 env = environ.Env()
 environ.Env.read_env()
 
@@ -104,31 +105,54 @@ WSGI_APPLICATION = 'core.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-# antigua database
+
 #DATABASES = {
 #    'default': {
-#        'ENGINE': 'django.db.backends.sqlite3',
-#        'NAME': BASE_DIR / 'db.sqlite3',
+#        'ENGINE': 'django.db.backends.mysql',
+#        'NAME': 'fitness_db',  # Nombre de tu base de datos MySQL local
+#        'USER': 'root',       # Usuario de MySQL local (por defecto 'root')
+#        'PASSWORD': 'division-1',  # Contraseña de MySQL local
+#        'HOST': 'localhost',  # Host de MySQL local
+#        'PORT': '3306',       # Puerto de MySQL local
+#    }
+
+#DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.postgresql',
+#        'NAME': 'hercules-fitness-studio',
+#        'USER': 'mjhijwxi',
+#        'PASSWORD': 'vR7zfJGq1bN2c1EEacULZzeErocz8bAA',
+#        'HOST': 'cornelius.db.elephantsql.com',
+#        'PORT': '5432',
+#        'OPTIONS': {
+#            'sslmode': 'require',  # Asegúrate de requerir SSL
+#        },
 #    }
 #}
 
-#print(f"DATABASE_URL: {env('DATABASE_URL')}")
-#
-#DATABASES = {
-#    'default': dj_database_url.parse(env('DATABASE_URL'))
-#}
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'fitness_db',  # Nombre de tu base de datos MySQL local
-        'USER': 'root',       # Usuario de MySQL local (por defecto 'root')
-        'PASSWORD': 'division-1',  # Contraseña de MySQL local
-        'HOST': 'localhost',  # Host de MySQL local
-        'PORT': '3306',       # Puerto de MySQL local
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL')
+    )
 }
 
 DATABASES['default']['ATOMIC_REQUESTS'] = True
+
+CORS_ORIGIN_WHITELIST = [
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1:3000',
+    'http://hercules-fitness-studio-c929f6cf59cf.herokuapp.com',
+]
+
+CSRF_TRUSTED_ORIGINS = [
+    'http://localhost:3000',
+    'http://localhost:8000',
+    'http://127.0.0.1:8000',
+    'http://127.0.0.1:3000',
+    'http://hercules-fitness-studio-c929f6cf59cf.herokuapp.com',
+]
 
 
 # Password validation
@@ -237,8 +261,6 @@ AUTH_USER_MODEL = 'user.UserAccount'
 
 CORS_ALLOW_CREDENTIALS = True
 
-CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEV')
-CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEV')
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
@@ -251,11 +273,9 @@ DEFAULT_FROM_EMAIL = 'k.climent83@gmail.com'
 
 if not DEBUG:
     ALLOWED_HOSTS=env.list('ALLOWED_HOSTS_DEPLOY')
-    CORS_ORIGIN_WHITELIST = env.list('CORS_ORIGIN_WHITELIST_DEPLOY')
-    CSRF_TRUSTED_ORIGINS = env.list('CSRF_TRUSTED_ORIGINS_DEPLOY')
 
     DATABASES = {
-    'default': dj_database_url.parse(env('DATABASE_URL'))
+        'default': dj_database_url.parse(env('DATABASE_URL'))
     }
     #DATABASES = {
     #'default': env.db('DATABASE_URL'),
