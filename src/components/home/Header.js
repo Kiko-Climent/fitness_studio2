@@ -1,5 +1,4 @@
 import { Typewriter } from "react-simple-typewriter";
-import landingPic from "assets/img/gym1.jpeg";
 import { useEffect, useState } from "react";
 
 function Header() {
@@ -21,7 +20,7 @@ function Header() {
             {/* Image */}
             <div className={`absolute inset-0 z-0 transition-opacity duration-1000 ${visible ? 'opacity-100' : 'opacity-0'}`}>
                 <img
-                    src={landingPic}
+                    src="https://res.cloudinary.com/dzlveh6fi/image/upload/v1728998306/gym1_evuhw9.jpg"
                     alt="Gym Background"
                     className="w-full h-full object-cover filter-pink"
                 />

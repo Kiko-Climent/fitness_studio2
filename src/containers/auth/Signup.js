@@ -41,9 +41,7 @@ function Signup({
         window.scrollTo(0,0)
     }
     return (
-      <Layout>
-        <Navbar/>
-        <div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8 mt-12">
+        <div className="min-h-full flex flex-col justify-center py-12 sm:px-6 lg:px-8 -mt-4">
           <div className="sm:mx-auto sm:w-full sm:max-w-md">
             <h2 className="mt-6 text-center text-4xl lg:text-7xl tracking-tight font-extrabold text-[#ec4eca]">sign up to become a member</h2>
             <p className="mt-2 text-center text-sm text-[#7ef455]">
@@ -144,7 +142,6 @@ function Signup({
             </div>
           </div>
         </div>
-      </Layout>
     )
   }
   const mapStateToProps = state => ({
