@@ -1,4 +1,3 @@
-import Footer from "components/navigation/Footer"
 import Navbar from "components/navigation/Navbar"
 import Signup from "containers/auth/Signup"
 import Layout from "hocs/layouts/Layout"
