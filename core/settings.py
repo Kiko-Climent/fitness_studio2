@@ -277,7 +277,10 @@ if not DEBUG:
     DATABASES = {
         'default': dj_database_url.parse(env('DATABASE_URL'))
     }
+    DATABASES['default']['ATOMIC_REQUESTS'] = True
+
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
     #DATABASES = {
     #'default': env.db('DATABASE_URL'),
     #}
-    DATABASES['default']['ATOMIC_REQUESTS'] = True
+    
