@@ -138,6 +138,7 @@ DATABASES = {
 
 DATABASES['default']['ATOMIC_REQUESTS'] = True
 
+CORS_ALLOW_CREDENTIALS = True
 CORS_ORIGIN_WHITELIST = [
     'http://localhost:3000',
     'http://localhost:8000',
@@ -259,7 +260,6 @@ DJOSER = {
 
 AUTH_USER_MODEL = 'user.UserAccount'
 
-CORS_ALLOW_CREDENTIALS = True
 
 
 #EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
@@ -283,4 +283,5 @@ if not DEBUG:
     #DATABASES = {
     #'default': env.db('DATABASE_URL'),
     #}
+
     

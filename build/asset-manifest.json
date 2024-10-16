@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b2fc39fe.css",
-    "main.js": "/static/js/main.2f21c9d6.js",
+    "main.js": "/static/js/main.3190eb79.js",
     "static/media/fitness_girl_color.jpg": "/static/media/fitness_girl_color.379f3c9219a3b2582e3f.jpg",
     "static/media/boxicons.svg": "/static/media/boxicons.9e2b21b135bc7d4c803f.svg",
     "static/media/boxicons.eot": "/static/media/boxicons.65a8ce52fc5427e8f94d.eot",
@@ -11,10 +11,10 @@
     "static/media/gatorade_logo.png": "/static/media/gatorade_logo.a492b1e7fed6ad3a8b13.png",
     "index.html": "/index.html",
     "main.b2fc39fe.css.map": "/static/css/main.b2fc39fe.css.map",
-    "main.2f21c9d6.js.map": "/static/js/main.2f21c9d6.js.map"
+    "main.3190eb79.js.map": "/static/js/main.3190eb79.js.map"
   },
   "entrypoints": [
     "static/css/main.b2fc39fe.css",
-    "static/js/main.2f21c9d6.js"
+    "static/js/main.3190eb79.js"
   ]
 }
