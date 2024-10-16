@@ -24,7 +24,7 @@ export default function Features2() {
 
         const timer2 = setTimeout(() => {
             setIsVisible(true);
-        }, 7000); // Simula que se activa al entrar la sección
+        }, 7000);
 
 
         return () => {
